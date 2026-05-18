@@ -1,0 +1,63 @@
+<section class="support" id="support">
+  <div class="container support-container">
+    <div class="support-title-wrapper">
+      <h2 class="support-title">Залишились питання? Зв'яжіться з нами!</h2>
+      <p class="support-text">Ми тут, щоб допомогти!</p>
+    </div>
+
+    <form class="support-form" id="supportForm">
+      <div class="support-input-wrapper">
+        <label class="support-input-label" for="supportName">Ім'я</label>
+        <input
+          class="support-input"
+          type="text"
+          name="name"
+          id="supportName"
+          placeholder="Іван"
+          minlength="2"
+          maxlength="60"
+          pattern="[А-Яа-яІіЇїЄєҐґA-Za-z\s'-]{2,60}"
+          title="Ім’я має містити тільки літери, пробіли, апостроф або дефіс."
+          required
+        />
+        <p class="text-invalid">Введіть коректне ім’я.</p>
+      </div>
+
+      <div class="support-input-wrapper">
+        <label class="support-input-label" for="supportEmail">
+          Електронна пошта
+        </label>
+        <input
+          class="support-input"
+          type="email"
+          name="email"
+          id="supportEmail"
+          placeholder="hello@ecotote.com"
+          required
+        />
+        <p class="text-invalid">Введіть коректний email.</p>
+      </div>
+
+      <div class="support-input-wrapper">
+        <label class="support-input-label" for="supportMessage">
+          Повідомлення
+        </label>
+        <textarea
+          class="support-message"
+          name="message"
+          id="supportMessage"
+          placeholder="Введіть своє повідомлення..."
+          minlength="5"
+          maxlength="500"
+          required
+        ></textarea>
+      </div>
+
+      <p class="support-form-message" id="supportFormMessage"></p>
+
+      <button class="support-btn" type="submit">Надіслати</button>
+    </form>
+
+    <div class="support-image" aria-hidden="true"></div>
+  </div>
+</section>

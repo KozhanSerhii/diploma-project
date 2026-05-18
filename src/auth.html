@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoTote | Авторизація</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fira+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/auth.css" />
+  </head>
+
+  <body>
+    <main>
+      <section class="auth-section">
+        <div class="auth-card">
+          <a href="./index.html" class="auth-logo-link" aria-label="На головну">
+            <svg class="auth-logo" width="103" height="39" aria-hidden="true">
+              <use href="/img/logo-icon.svg#logo-icon"></use>
+            </svg>
+          </a>
+
+          <div class="auth-panel is-active" id="loginPanel">
+            <h1 class="auth-title">Увійти</h1>
+            <p class="auth-text">
+              Ласкаво просимо! Увійдіть у свій обліковий запис.
+            </p>
+
+            <form class="auth-form" id="loginForm">
+              <label class="auth-label">
+                Email
+                <input
+                  class="auth-input"
+                  type="email"
+                  id="loginEmail"
+                  name="email"
+                  placeholder="Введіть свою електронну адресу"
+                  required
+                />
+              </label>
+
+              <label class="auth-label">
+                Пароль
+                <input
+                  class="auth-input"
+                  type="password"
+                  id="loginPassword"
+                  name="password"
+                  placeholder="Введіть пароль"
+                  minlength="6"
+                  required
+                />
+              </label>
+
+              <div class="auth-row">
+                <label class="auth-checkbox-label">
+                  <input type="checkbox" name="remember" />
+                  <span>Запам'ятати мене</span>
+                </label>
+
+                <button class="auth-link-btn" type="button" id="showReset">
+                  Забули пароль?
+                </button>
+              </div>
+
+              <p class="auth-message" id="loginMessage"></p>
+
+              <button class="auth-submit" type="submit" id="loginBtn">
+                Увійти
+              </button>
+            </form>
+
+            <p class="auth-switch">
+              Немає акаунта?
+              <button class="auth-switch-btn" type="button" id="showRegister">
+                Зареєструватися
+              </button>
+            </p>
+          </div>
+
+          <div class="auth-panel" id="registerPanel">
+            <h1 class="auth-title">Зареєструватися</h1>
+            <p class="auth-text">
+              Створіть обліковий запис, щоб розпочати роботу з EcoTote.
+            </p>
+
+            <form class="auth-form" id="registerForm">
+              <label class="auth-label">
+                Повне ім'я
+                <input
+                  class="auth-input"
+                  type="text"
+                  id="registerName"
+                  name="name"
+                  placeholder="Введіть своє повне ім'я"
+                  minlength="2"
+                  maxlength="60"
+                  pattern="[А-Яа-яІіЇїЄєҐґA-Za-z\s'-]{2,60}"
+                  title="Ім’я має містити тільки літери, пробіли, апостроф або дефіс."
+                  required
+                />
+              </label>
+
+              <label class="auth-label">
+                Email
+                <input
+                  class="auth-input"
+                  type="email"
+                  id="registerEmail"
+                  name="email"
+                  placeholder="Введіть свою електронну адресу"
+                  required
+                />
+              </label>
+
+              <label class="auth-label">
+                Пароль
+                <input
+                  class="auth-input"
+                  type="password"
+                  id="registerPassword"
+                  name="password"
+                  placeholder="Придумайте пароль"
+                  minlength="6"
+                  required
+                />
+              </label>
+
+              <label class="auth-label">
+                Повторіть пароль
+                <input
+                  class="auth-input"
+                  type="password"
+                  id="registerConfirmPassword"
+                  name="confirmPassword"
+                  placeholder="Повторіть пароль"
+                  minlength="6"
+                  required
+                />
+              </label>
+
+              <p class="auth-message" id="registerMessage"></p>
+
+              <button class="auth-submit" type="submit" id="registerBtn">
+                Зареєструватися
+              </button>
+            </form>
+
+            <p class="auth-switch">
+              Вже є акаунт?
+              <button class="auth-switch-btn" type="button" id="showLogin">
+                Увійти
+              </button>
+            </p>
+          </div>
+
+          <div class="auth-panel" id="resetPanel">
+            <h1 class="auth-title">Відновлення пароля</h1>
+            <p class="auth-text">
+              Введіть email облікового запису та новий пароль.
+            </p>
+
+            <form class="auth-form" id="resetForm">
+              <label class="auth-label">
+                Email
+                <input
+                  class="auth-input"
+                  type="email"
+                  id="resetEmail"
+                  name="email"
+                  placeholder="Введіть email"
+                  required
+                />
+              </label>
+
+              <label class="auth-label">
+                Новий пароль
+                <input
+                  class="auth-input"
+                  type="password"
+                  id="resetNewPassword"
+                  name="newPassword"
+                  placeholder="Введіть новий пароль"
+                  minlength="6"
+                  required
+                />
+              </label>
+
+              <label class="auth-label">
+                Повторіть новий пароль
+                <input
+                  class="auth-input"
+                  type="password"
+                  id="resetConfirmNewPassword"
+                  name="confirmNewPassword"
+                  placeholder="Повторіть новий пароль"
+                  minlength="6"
+                  required
+                />
+              </label>
+
+              <p class="auth-message" id="resetMessage"></p>
+
+              <button class="auth-submit" type="submit" id="resetBtn">
+                Змінити пароль
+              </button>
+            </form>
+
+            <p class="auth-switch">
+              Згадали пароль?
+              <button class="auth-switch-btn" type="button" id="backToLogin">
+                Увійти
+              </button>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/validation.js"></script>
+    <script src="./js/auth.js"></script>
+  </body>
+</html>

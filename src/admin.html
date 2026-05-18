@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoTote | Адмін-панель</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fira+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/admin.css" />
+  </head>
+
+  <body>
+    <div class="admin-page">
+      <header class="admin-header">
+        <a href="./index.html" class="admin-logo-link" aria-label="На головну">
+          <svg class="admin-logo" width="120" height="45" aria-hidden="true">
+            <use href="/img/logo-icon.svg#logo-icon"></use>
+          </svg>
+        </a>
+
+        <div class="admin-header-actions">
+          <span class="admin-user">Адміністратор</span>
+          <a href="./index.html" class="admin-logout" id="logoutBtn">Вийти</a>
+        </div>
+      </header>
+
+      <aside class="admin-sidebar">
+        <nav class="admin-menu" aria-label="Меню адміністратора">
+          <button class="admin-menu-btn is-active" type="button" data-page="products">
+            Товари
+          </button>
+          <button class="admin-menu-btn" type="button" data-page="categories">
+            Категорії
+          </button>
+          <button class="admin-menu-btn" type="button" data-page="orders">
+            Замовлення
+          </button>
+          <button class="admin-menu-btn" type="button" data-page="support">
+            Звернення
+          </button>
+          <button class="admin-menu-btn" type="button" data-page="logs">
+            Журнал дій
+          </button>
+        </nav>
+      </aside>
+
+      <main class="admin-main">
+        <section class="admin-section is-active" data-section="products">
+          <div class="admin-section-header">
+            <h1 class="admin-title">Керування товарами</h1>
+            <button class="admin-add-btn" type="button" id="openProductModal">
+              + Додати товар
+            </button>
+          </div>
+
+          <div class="admin-filters">
+            <input
+              class="admin-input"
+              type="text"
+              id="productSearch"
+              placeholder="Пошук товарів..."
+            />
+
+            <select class="admin-select" id="productCategoryFilter">
+              <option value="all">Категорія: Усі</option>
+            </select>
+
+            <select class="admin-select" id="productStatusFilter">
+              <option value="all">Статус: Усі</option>
+              <option value="Активний">Активний</option>
+              <option value="Неактивний">Неактивний</option>
+            </select>
+          </div>
+
+          <div class="admin-table-card">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Зображення</th>
+                  <th>Назва</th>
+                  <th>Категорія</th>
+                  <th>Ціна</th>
+                  <th>Залишок</th>
+                  <th>Статус</th>
+                  <th>Дії</th>
+                </tr>
+              </thead>
+              <tbody id="productsTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-section" data-section="categories">
+          <div class="admin-section-header">
+            <h1 class="admin-title">Керування категоріями</h1>
+            <button class="admin-add-btn" type="button" id="openCategoryModal">
+              + Додати категорію
+            </button>
+          </div>
+
+          <div class="admin-filters">
+            <input
+              class="admin-input"
+              type="text"
+              id="categorySearch"
+              placeholder="Пошук категорій..."
+            />
+          </div>
+
+          <div class="admin-table-card">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Назва</th>
+                  <th>Опис</th>
+                  <th>Кількість товарів</th>
+                  <th>Дії</th>
+                </tr>
+              </thead>
+              <tbody id="categoriesTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-section" data-section="orders">
+          <div class="admin-section-header">
+            <h1 class="admin-title">Керування замовленнями</h1>
+            <button class="admin-add-btn" type="button" id="exportOrdersBtn">
+              Експорт
+            </button>
+          </div>
+
+          <div class="admin-filters">
+            <input
+              class="admin-input"
+              type="text"
+              id="orderSearch"
+              placeholder="Пошук замовлень..."
+            />
+
+            <select class="admin-select" id="orderStatusFilter">
+              <option value="all">Статус: Усі</option>
+              <option value="Нове">Нове</option>
+              <option value="В обробці">В обробці</option>
+              <option value="Відправлено">Відправлено</option>
+              <option value="Доставлено">Доставлено</option>
+            </select>
+          </div>
+
+          <div class="order-stats">
+            <div class="order-stat-card">
+              <span>Нові замовлення</span>
+              <strong id="newOrdersCount">0</strong>
+            </div>
+            <div class="order-stat-card">
+              <span>В обробці</span>
+              <strong id="processingOrdersCount">0</strong>
+            </div>
+            <div class="order-stat-card">
+              <span>Завершені</span>
+              <strong id="completedOrdersCount">0</strong>
+            </div>
+          </div>
+
+          <div class="admin-table-card">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>№ замовлення</th>
+                  <th>Клієнт</th>
+                  <th>Дата</th>
+                  <th>Сума</th>
+                  <th>Статус</th>
+                  <th>Оплата</th>
+                  <th>Дії</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-section" data-section="support">
+          <div class="admin-section-header">
+            <div>
+              <h1 class="admin-title">Звернення клієнтів</h1>
+              <p class="admin-text">
+                Перегляд звернень користувачів та надання відповідей.
+              </p>
+            </div>
+          </div>
+
+          <div class="admin-table-card">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Клієнт</th>
+                  <th>Email</th>
+                  <th>Повідомлення</th>
+                  <th>Відповідь</th>
+                  <th>Статус</th>
+                  <th>Дата</th>
+                  <th>Дії</th>
+                </tr>
+              </thead>
+              <tbody id="supportRequestsTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-section" data-section="logs">
+          <div class="admin-section-header">
+            <div>
+              <h1 class="admin-title">Журнал дій адміністратора</h1>
+              <p class="admin-text">
+                Перегляд дій, виконаних адміністратором у системі.
+              </p>
+            </div>
+          </div>
+
+          <div class="admin-table-card">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Адміністратор</th>
+                  <th>Email</th>
+                  <th>Дія</th>
+                  <th>Деталі</th>
+                  <th>Дата</th>
+                </tr>
+              </thead>
+              <tbody id="adminLogsTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop is-hidden" id="productModal">
+      <div class="modal">
+        <button
+          class="modal-close"
+          type="button"
+          data-close-product
+          aria-label="Закрити"
+        >
+          ×
+        </button>
+
+        <h2 class="modal-title" id="productModalTitle">Додати товар</h2>
+
+        <form class="modal-form" id="productForm">
+          <input type="hidden" id="productId" />
+
+          <label>
+            Назва товару
+            <input type="text" id="productName" minlength="2" maxlength="80" required />
+          </label>
+
+          <label>
+            Опис
+            <textarea id="productDescription" minlength="5" required></textarea>
+          </label>
+
+          <label>
+            Категорія
+            <select id="productCategory" required></select>
+          </label>
+
+          <label>
+            Ціна, грн
+            <input type="number" id="productPrice" min="1" step="1" required />
+          </label>
+
+          <label>
+            Залишок
+            <input type="number" id="productStock" min="0" step="1" required />
+          </label>
+
+          <label>
+            Зображення, шлях
+            <input
+              type="text"
+              id="productImage"
+              placeholder="/img/assortment-img/assortement-bag1-mob.webp"
+              required
+            />
+          </label>
+
+          <label>
+            Статус
+            <select id="productStatus">
+              <option value="Активний">Активний</option>
+              <option value="Неактивний">Неактивний</option>
+            </select>
+          </label>
+
+          <button class="modal-submit" type="submit">Зберегти</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-backdrop is-hidden" id="categoryModal">
+      <div class="modal">
+        <button
+          class="modal-close"
+          type="button"
+          data-close-category
+          aria-label="Закрити"
+        >
+          ×
+        </button>
+
+        <h2 class="modal-title" id="categoryModalTitle">Додати категорію</h2>
+
+        <form class="modal-form" id="categoryForm">
+          <input type="hidden" id="categoryId" />
+
+          <label>
+            Назва категорії
+            <input type="text" id="categoryName" minlength="2" required />
+          </label>
+
+          <label>
+            Опис
+            <textarea id="categoryDescription" minlength="5" required></textarea>
+          </label>
+
+          <button class="modal-submit" type="submit">Зберегти</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-backdrop is-hidden" id="orderModal">
+      <div class="modal order-modal">
+        <button
+          class="modal-close"
+          type="button"
+          data-close-order
+          aria-label="Закрити"
+        >
+          ×
+        </button>
+
+        <h2 class="modal-title">Інформація про замовлення</h2>
+
+        <div class="order-details">
+          <div class="order-details-block">
+            <h3>Дані клієнта</h3>
+            <p><strong>№ замовлення:</strong> <span id="orderDetailsId"></span></p>
+            <p><strong>Клієнт:</strong> <span id="orderDetailsClient"></span></p>
+            <p><strong>Email:</strong> <span id="orderDetailsEmail"></span></p>
+            <p><strong>Телефон:</strong> <span id="orderDetailsPhone"></span></p>
+            <p><strong>Місто:</strong> <span id="orderDetailsCity"></span></p>
+            <p><strong>Адреса:</strong> <span id="orderDetailsAddress"></span></p>
+            <p><strong>Дата:</strong> <span id="orderDetailsDate"></span></p>
+            <p><strong>Оплата:</strong> <span id="orderDetailsPayment"></span></p>
+            <p><strong>Статус:</strong> <span id="orderDetailsStatus"></span></p>
+          </div>
+
+          <div class="order-details-block">
+            <h3>Товари в замовленні</h3>
+            <ul class="order-details-items" id="orderDetailsItems"></ul>
+
+            <div class="order-details-total">
+              <span>Усього:</span>
+              <strong id="orderDetailsTotal"></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/validation.js"></script>
+    <script src="./js/admin.js"></script>
+  </body>
+</html>

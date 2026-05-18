@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoTote | Оформлення замовлення</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fira+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/checkout.css" />
+  </head>
+
+  <body>
+    <header class="checkout-header">
+      <div class="checkout-header-container">
+        <a href="./index.html" class="checkout-logo-link" aria-label="На головну">
+          <svg class="checkout-logo" width="103" height="39" aria-hidden="true">
+            <use href="/img/logo-icon.svg#logo-icon"></use>
+          </svg>
+        </a>
+
+        <nav class="checkout-nav" aria-label="Основна навігація">
+          <ul class="checkout-nav-list">
+            <li><a href="./index.html#feature">Про нас</a></li>
+            <li><a href="./index.html#section-layout">Переваги</a></li>
+            <li><a href="./index.html#assortment-section">Асортимент</a></li>
+            <li><a href="./index.html#gallery">Галерея</a></li>
+            <li><a href="./index.html#feedbacks">Відгуки</a></li>
+            <li><a href="./index.html#support">Контакти</a></li>
+          </ul>
+        </nav>
+
+        <div class="checkout-header-actions">
+          <a href="./auth.html" class="header-auth-link" id="authLink">
+            Увійти
+          </a>
+
+          <a href="./cart.html" class="checkout-cart-link" aria-label="Кошик">
+            <svg class="checkout-cart-icon" width="32" height="32" aria-hidden="true">
+              <use href="/img/icons.svg#cart-icon"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="checkout-section">
+        <div class="checkout-container">
+          <h1 class="checkout-title">Оформлення замовлення</h1>
+
+          <div class="checkout-layout">
+            <form class="checkout-form" id="checkoutForm">
+              <div class="checkout-card">
+                <h2 class="checkout-card-title">Контактна інформація</h2>
+
+                <label class="checkout-label">
+                  Повне ім'я
+                  <input
+                    class="checkout-input"
+                    type="text"
+                    name="name"
+                    placeholder="Сергій Кожан"
+                    minlength="2"
+                    maxlength="60"
+                    pattern="[А-Яа-яІіЇїЄєҐґA-Za-z\s'-]{2,60}"
+                    title="Ім’я має містити тільки літери, пробіли, апостроф або дефіс."
+                    required
+                  />
+                </label>
+
+                <label class="checkout-label">
+                  Email
+                  <input
+                    class="checkout-input"
+                    type="email"
+                    name="email"
+                    placeholder="client@test.com"
+                    required
+                  />
+                </label>
+
+                <label class="checkout-label">
+                  Номер телефону
+                  <input
+                    class="checkout-input"
+                    type="tel"
+                    name="phone"
+                    placeholder="+380501234567"
+                    pattern="\+380[0-9]{9}"
+                    title="Телефон має бути у форматі +380501234567."
+                    required
+                  />
+                </label>
+              </div>
+
+              <div class="checkout-card">
+                <h2 class="checkout-card-title">Доставка</h2>
+
+                <label class="checkout-radio-label">
+                  <input
+                    class="checkout-radio"
+                    type="radio"
+                    name="delivery"
+                    value="Нова Пошта"
+                    checked
+                  />
+                  <span>
+                    Кур'єрська служба «Нова Пошта»
+                    <small>Доставка 2–3 дні</small>
+                  </span>
+                </label>
+
+                <label class="checkout-label">
+                  Місто
+                  <input
+                    class="checkout-input"
+                    type="text"
+                    name="city"
+                    placeholder="Харків"
+                    minlength="2"
+                    maxlength="60"
+                    pattern="[А-Яа-яІіЇїЄєҐґA-Za-z\s'-]{2,60}"
+                    title="Місто має містити тільки літери, пробіли, апостроф або дефіс."
+                    required
+                  />
+                </label>
+
+                <label class="checkout-label">
+                  Адреса
+                  <input
+                    class="checkout-input"
+                    type="text"
+                    name="address"
+                    placeholder="вул. Сумська, 10"
+                    minlength="5"
+                    maxlength="120"
+                    required
+                  />
+                </label>
+              </div>
+
+              <div class="checkout-card">
+                <h2 class="checkout-card-title">Спосіб оплати</h2>
+
+                <label class="checkout-radio-label">
+                  <input
+                    class="checkout-radio"
+                    type="radio"
+                    name="payment"
+                    value="Оплачено картою"
+                    checked
+                  />
+                  <span>Онлайн-оплата карткою</span>
+                </label>
+
+                <label class="checkout-radio-label">
+                  <input
+                    class="checkout-radio"
+                    type="radio"
+                    name="payment"
+                    value="Оплата при отриманні"
+                  />
+                  <span>Оплата при отриманні</span>
+                </label>
+              </div>
+            </form>
+
+            <aside class="checkout-sidebar">
+              <h2 class="checkout-sidebar-title">Замовлення</h2>
+
+              <div class="checkout-order-list"></div>
+
+              <div class="checkout-summary">
+                <div class="checkout-summary-row">
+                  <span>Підсумок</span>
+                  <span class="checkout-subtotal">₴0.00</span>
+                </div>
+
+                <div class="checkout-summary-row">
+                  <span>Доставка</span>
+                  <span class="checkout-delivery">₴100.00</span>
+                </div>
+
+                <div class="checkout-summary-divider"></div>
+
+                <div class="checkout-summary-row checkout-summary-total">
+                  <span>Усього</span>
+                  <span class="checkout-total">₴0.00</span>
+                </div>
+              </div>
+
+              <button class="checkout-submit-btn" type="submit" form="checkoutForm">
+                Оформити замовлення
+              </button>
+
+              <p class="checkout-payment-note">
+                Ваші платіжні дані захищені та зашифровані.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/validation.js"></script>
+    <script src="./js/checkout.js"></script>
+    <script src="./js/auth-link.js"></script>
+  </body>
+</html>

@@ -1,44 +1,242 @@
+/* ================== HEADER ================== */
+
 .header {
-  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  max-width: 100%;
+  background-color: #75d281;
 }
-.nav {
+
+.navbar-container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  height: 72px;
+  background-color: #75d281;
 }
-.nav-logo {
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-header {
+  display: block;
+  margin-left: 64px;
+  width: 106px;
+  height: 45px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-list {
+  display: none;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: #030a06;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 15px 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #030a06;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.login-link:hover,
+.login-link:focus,
+.cart-link:hover,
+.cart-link:focus {
+  text-decoration: underline;
+  color: #030a06;
+}
+
+.nav-link:active,
+.login-link:active,
+.cart-link:active {
+  color: #030a06;
+  opacity: 0.75;
+}
+
+/* RIGHT SIDE ACTIONS */
+.header-actions {
+  display: none;
+  align-items: center;
+  gap: 36px;
+  margin-right: 64px;
+}
+
+.login-link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: #030a06;
+  text-decoration: none;
+}
+
+.cart-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: #030a06;
+  text-decoration: none;
 }
-.nav-list {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
-}
-.nav-link {
-  position: relative;
+
+.cart-icon {
   display: block;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: 200ms ease-in;
+  width: 32px;
+  height: 32px;
 }
-.nav-link:hover,
-.nav-link:focus {
-  color: #747bff;
+
+/* BURGER BUTTON */
+.burger-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #030a06;
 }
-.nav-link::after {
-  content: '';
+
+/*========== MOBILE ========== */
+@media screen and (min-width: 320px) {
+  .navbar-container {
+    max-height: 64px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .logo-header {
+    width: 84px;
+    height: 36px;
+    margin-left: 0;
+  }
+
+  .logo-header-mobile-menu {
+    width: 84px;
+    height: 36px;
+  }
+
+  .burger-btn {
+    margin-right: 0;
+  }
+}
+
+/*========== TABLET ========== */
+@media screen and (min-width: 768px) {
+  .navbar-container {
+    height: 64px;
+  }
+
+  .logo-header {
+    margin-left: 12px;
+  }
+
+  .burger-btn {
+    margin-right: 0;
+  }
+}
+
+/* ========== DESKTOP ========== */
+@media screen and (min-width: 1440px) {
+  .nav-link-list {
+    display: flex;
+  }
+
+  .logo-header {
+    margin-left: 44px;
+    width: 106px;
+    height: 45px;
+  }
+
+  .header-actions {
+    display: flex;
+  }
+
+  .burger-btn {
+    display: none;
+  }
+}
+
+/* ========== MOBILE MENU ========== */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: #75d281;
+  transform: translateX(100%);
+  transition: 0.3s ease;
+}
+
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+.mobile-menu-container {
+  margin-left: 0;
+  margin-top: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.button-mobile-close {
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(100%);
-  width: 110%;
-  height: 4px;
-  border-radius: 4px;
-  transform-origin: center;
-  animation: stretch 400ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 200ms both;
+  top: 16px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  color: #030a06;
 }
-.nav-link.active::after {
-  background: #747bff;
+
+.mobile-link-navigation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  list-style: none;
+  margin: 0;
+  padding: 32px 0 0;
+}
+
+.mobile-link-navigation-list a {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: #030a06;
+  text-decoration: none;
+}
+
+.mobile-link-navigation-list a:hover,
+.mobile-link-navigation-list a:focus {
+  text-decoration: underline;
+  color: #030a06;
+}
+
+.mobile-link-navigation-list a:active {
+  color: #030a06;
+  opacity: 0.75;
+}
+
+.mobile-cart-link {
+  display: inline-flex;
+  align-items: center;
 }

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoTote | Профіль</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fira+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/profile.css" />
+  </head>
+
+  <body>
+    <div class="profile-layout">
+      <header class="profile-header">
+        <a href="./index.html" class="profile-logo-link" aria-label="На головну">
+          <svg class="profile-logo" width="120" height="45" aria-hidden="true">
+            <use href="/img/logo-icon.svg#logo-icon"></use>
+          </svg>
+        </a>
+
+        <div class="profile-header-actions">
+          <span class="profile-user-name" id="profileUserName">Клієнт</span>
+
+          <button class="profile-logout" type="button" id="logoutBtn">
+            Вийти
+          </button>
+        </div>
+      </header>
+
+      <aside class="profile-sidebar">
+        <nav class="profile-menu" aria-label="Меню профілю">
+          <button
+            class="profile-menu-btn is-active"
+            type="button"
+            data-page="profile"
+          >
+            Мої дані
+          </button>
+
+          <button class="profile-menu-btn" type="button" data-page="orders">
+            Мої замовлення
+          </button>
+
+          <button class="profile-menu-btn" type="button" data-page="support">
+            Мої звернення
+          </button>
+
+          <a href="./index.html" class="profile-menu-link">На головну</a>
+          <a href="./cart.html" class="profile-menu-link">Кошик</a>
+        </nav>
+      </aside>
+
+      <main class="profile-main">
+        <section class="profile-section is-active" data-section="profile">
+          <div class="profile-section-header">
+            <div>
+              <h1 class="profile-title">Редагування профілю</h1>
+              <p class="profile-text">
+                Оновіть особисті дані, які використовуються для оформлення
+                замовлень.
+              </p>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <form class="profile-form" id="profileForm">
+              <label class="profile-label">
+                Повне ім’я
+                <input
+                  class="profile-input"
+                  type="text"
+                  id="profileName"
+                  name="name"
+                  placeholder="Введіть повне ім’я"
+                  minlength="2"
+                  maxlength="60"
+                  pattern="[А-Яа-яІіЇїЄєҐґA-Za-z\s'-]{2,60}"
+                  title="Ім’я має містити тільки літери, пробіли, апостроф або дефіс. Мінімум 2 символи."
+                  required
+                />
+              </label>
+
+              <label class="profile-label">
+                Email
+                <input
+                  class="profile-input"
+                  type="email"
+                  id="profileEmail"
+                  name="email"
+                  placeholder="client@test.com"
+                  required
+                />
+              </label>
+
+              <label class="profile-label">
+                Телефон
+                <input
+                  class="profile-input"
+                  type="tel"
+                  id="profilePhone"
+                  name="phone"
+                  placeholder="+380501234567"
+                  pattern="\+380[0-9]{9}"
+                  title="Телефон має бути у форматі +380501234567."
+                />
+              </label>
+
+              <label class="profile-label">
+                Місто
+                <input
+                  class="profile-input"
+                  type="text"
+                  id="profileCity"
+                  name="city"
+                  placeholder="Харків"
+                  minlength="2"
+                  maxlength="60"
+                  pattern="[А-Яа-яІіЇїЄєҐґA-Za-z\s'-]{2,60}"
+                  title="Місто має містити тільки літери, пробіли, апостроф або дефіс."
+                />
+              </label>
+
+              <label class="profile-label">
+                Адреса
+                <input
+                  class="profile-input"
+                  type="text"
+                  id="profileAddress"
+                  name="address"
+                  placeholder="вул. Сумська, 10"
+                  minlength="5"
+                  maxlength="120"
+                  title="Адреса має містити від 5 до 120 символів."
+                  required
+                />
+              </label>
+
+              <p class="profile-message" id="profileMessage"></p>
+
+              <button class="profile-submit" type="submit">
+                Зберегти зміни
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section class="profile-section" data-section="orders">
+          <div class="profile-section-header">
+            <div>
+              <h1 class="profile-title">Мої замовлення</h1>
+              <p class="profile-text">
+                Тут відображаються ваші попередні та поточні замовлення.
+              </p>
+            </div>
+          </div>
+
+          <div class="profile-orders-list" id="profileOrdersList"></div>
+        </section>
+
+        <section class="profile-section" data-section="support">
+          <div class="profile-section-header">
+            <div>
+              <h1 class="profile-title">Мої звернення</h1>
+              <p class="profile-text">
+                Тут відображаються ваші звернення до служби підтримки та
+                відповіді адміністратора.
+              </p>
+            </div>
+          </div>
+
+          <div class="profile-support-list" id="profileSupportList"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./js/validation.js"></script>
+    <script src="./js/profile.js"></script>
+  </body>
+</html>

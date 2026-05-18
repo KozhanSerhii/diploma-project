@@ -1,19 +1,82 @@
 <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
+  <div class="navbar-container container">
+    <a href="./index.html" class="logo-link" aria-label="EcoTote головна сторінка">
+      <svg class="logo-header" width="103" height="39" aria-hidden="true">
+        <use href="/img/logo-icon.svg#logo-icon"></use>
+      </svg>
+    </a>
+
+    <nav class="main-nav" aria-label="Основна навігація">
+      <ul class="nav-link-list">
+        <li><a href="#feature" class="nav-link">Про нас</a></li>
+        <li><a href="#section-layout" class="nav-link">Переваги</a></li>
+        <li><a href="#assortment-section" class="nav-link">Асортимент</a></li>
+        <li><a href="#gallery" class="nav-link">Галерея</a></li>
+        <li><a href="#feedbacks" class="nav-link">Відгуки</a></li>
+        <li><a href="#support" class="nav-link">Контакти</a></li>
       </ul>
     </nav>
+
+    <div class="header-actions">
+      <a href="./auth.html" class="header-auth-link" id="authLink">
+        Увійти
+      </a>
+
+      <a href="./cart.html" class="cart-link" aria-label="Перейти до кошика">
+        <svg class="cart-icon" width="32" height="32" aria-hidden="true">
+          <use href="./img/icons.svg#cart-icon"></use>
+        </svg>
+      </a>
+    </div>
+
+    <button class="burger-btn" type="button" aria-label="Відкрити меню">
+      <svg class="burger-menu-icon" width="28" height="28" aria-hidden="true">
+        <use href="/img/icons.svg#burger-icon"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu-container container">
+      <a href="./index.html" aria-label="EcoTote головна сторінка">
+        <svg
+          class="logo-header-mobile-menu"
+          width="103"
+          height="39"
+          aria-hidden="true"
+        >
+          <use href="/img/logo-icon.svg#logo-icon"></use>
+        </svg>
+      </a>
+
+      <button
+        class="button-mobile-close"
+        type="button"
+        aria-label="Закрити меню"
+      >
+        <svg width="32" height="32" aria-hidden="true">
+          <use href="/img/icons.svg#x-icon-close"></use>
+        </svg>
+      </button>
+
+      <nav class="nav-list-mobile" aria-label="Мобільна навігація">
+        <ul class="mobile-link-navigation-list">
+          <li><a href="#feature">Про нас</a></li>
+          <li><a href="#section-layout">Переваги</a></li>
+          <li><a href="#assortment-section">Асортимент</a></li>
+          <li><a href="#gallery">Галерея</a></li>
+          <li><a href="#feedbacks">Відгуки</a></li>
+          <li><a href="#support">Контакти</a></li>
+          <li>
+            <a href="./auth.html" class="header-auth-link">Увійти</a>
+          </li>
+          <li>
+            <a href="./cart.html" class="mobile-cart-link">Кошик</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
+
+<script src="/src/menu.js"></script>
