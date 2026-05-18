@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoTote | Кошик</title>
+
+    <link rel="icon" type="image/svg+xml" href="/diploma-project/favicon.svg" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fira+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" crossorigin href="/diploma-project/assets/cart-DjuqrKZp.css">
+  </head>
+
+  <body>
+    <header class="cart-header">
+      <div class="cart-header-container">
+        <a href="./index.html" class="cart-logo-link" aria-label="На головну">
+          <svg class="cart-logo" width="103" height="39" aria-hidden="true">
+            <use href="/diploma-project/assets/logo-icon-BlEpIBSP.svg#logo-icon"></use>
+          </svg>
+        </a>
+
+        <nav class="cart-nav" aria-label="Основна навігація">
+          <ul class="cart-nav-list">
+            <li><a href="./index.html#feature">Про нас</a></li>
+            <li><a href="./index.html#section-layout">Переваги</a></li>
+            <li><a href="./index.html#assortment-section">Асортимент</a></li>
+            <li><a href="./index.html#gallery">Галерея</a></li>
+            <li><a href="./index.html#feedbacks">Відгуки</a></li>
+            <li><a href="./index.html#support">Контакти</a></li>
+          </ul>
+        </nav>
+
+        <div class="cart-header-actions">
+          <a href="./auth.html" class="header-auth-link" id="authLink">
+            Увійти
+          </a>
+
+          <a href="./cart.html" class="cart-icon-link" aria-label="Кошик">
+            <svg class="cart-icon" width="30" height="30" aria-hidden="true">
+              <use href="/diploma-project/assets/icons-DWiP1i17.svg#cart-icon"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="cart-section">
+        <div class="cart-container">
+          <h1 class="cart-page-title">Кошик</h1>
+
+          <div class="cart-layout">
+            <div class="cart-card">
+              <div class="cart-card-header">
+                <h2 class="cart-card-title">Ваші товари</h2>
+                <button class="cart-clear-btn" type="button">
+                  Очистити кошик
+                </button>
+              </div>
+
+              <ul class="cart-list"></ul>
+
+              <div class="cart-empty">
+                <p class="cart-empty-title">Кошик порожній</p>
+                <p class="cart-empty-text">
+                  Додайте товари з асортименту, щоб оформити замовлення.
+                </p>
+                <a href="./index.html#assortment-section" class="cart-empty-link">
+                  Перейти до асортименту
+                </a>
+              </div>
+            </div>
+
+            <aside class="summary-card">
+              <h2 class="summary-title">Підсумок</h2>
+
+              <div class="summary-row">
+                <span>Товари</span>
+                <span class="cart-subtotal">₴0.00</span>
+              </div>
+
+              <div class="summary-row">
+                <span>Доставка</span>
+                <span class="cart-delivery">₴100.00</span>
+              </div>
+
+              <div class="summary-divider"></div>
+
+              <div class="summary-row summary-total">
+                <span>Усього</span>
+                <span class="cart-total">₴0.00</span>
+              </div>
+
+              <a href="./checkout.html" class="summary-checkout-btn">
+                Оформити замовлення
+              </a>
+
+              <a href="./index.html#assortment-section" class="summary-back-link">
+                Продовжити покупки
+              </a>
+
+              <p class="summary-note">
+                Ваші платіжні дані захищені та зашифровані.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/cart.js"></script>
+    <script src="./js/auth-link.js"></script>
+  </body>
+</html>

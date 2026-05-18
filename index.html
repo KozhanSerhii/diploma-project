@@ -1,128 +1,732 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/diploma-project/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>EcoTote</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fira+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <script type="module" crossorigin src="/diploma-project/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/diploma-project/assets/styles-DvPDDfy5.css">
+    <link rel="stylesheet" crossorigin href="/diploma-project/assets/index-Di3oJGH6.css">
   </head>
+
   <body>
     <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="/diploma-project/assets/sprite-E8vg0sBb.svg#logo"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
+  <div class="navbar-container container">
+    <a href="./index.html" class="logo-link" aria-label="EcoTote головна сторінка">
+      <svg class="logo-header" width="103" height="39" aria-hidden="true">
+        <use href="/diploma-project/assets/logo-icon-BlEpIBSP.svg#logo-icon"></use>
+      </svg>
+    </a>
+
+    <nav class="main-nav" aria-label="Основна навігація">
+      <ul class="nav-link-list">
+        <li><a href="#feature" class="nav-link">Про нас</a></li>
+        <li><a href="#section-layout" class="nav-link">Переваги</a></li>
+        <li><a href="#assortment-section" class="nav-link">Асортимент</a></li>
+        <li><a href="#gallery" class="nav-link">Галерея</a></li>
+        <li><a href="#feedbacks" class="nav-link">Відгуки</a></li>
+        <li><a href="#support" class="nav-link">Контакти</a></li>
       </ul>
     </nav>
+
+    <div class="header-actions">
+      <a href="./auth.html" class="header-auth-link" id="authLink">
+        Увійти
+      </a>
+
+      <a href="./cart.html" class="cart-link" aria-label="Перейти до кошика">
+        <svg class="cart-icon" width="32" height="32" aria-hidden="true">
+          <use href="/diploma-project/assets/icons-DWiP1i17.svg#cart-icon"></use>
+        </svg>
+      </a>
+    </div>
+
+    <button class="burger-btn" type="button" aria-label="Відкрити меню">
+      <svg class="burger-menu-icon" width="28" height="28" aria-hidden="true">
+        <use href="/diploma-project/assets/icons-DWiP1i17.svg#burger-icon"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu-container container">
+      <a href="./index.html" aria-label="EcoTote головна сторінка">
+        <svg
+          class="logo-header-mobile-menu"
+          width="103"
+          height="39"
+          aria-hidden="true"
+        >
+          <use href="/diploma-project/assets/logo-icon-BlEpIBSP.svg#logo-icon"></use>
+        </svg>
+      </a>
+
+      <button
+        class="button-mobile-close"
+        type="button"
+        aria-label="Закрити меню"
+      >
+        <svg width="32" height="32" aria-hidden="true">
+          <use href="/diploma-project/assets/icons-DWiP1i17.svg#x-icon-close"></use>
+        </svg>
+      </button>
+
+      <nav class="nav-list-mobile" aria-label="Мобільна навігація">
+        <ul class="mobile-link-navigation-list">
+          <li><a href="#feature">Про нас</a></li>
+          <li><a href="#section-layout">Переваги</a></li>
+          <li><a href="#assortment-section">Асортимент</a></li>
+          <li><a href="#gallery">Галерея</a></li>
+          <li><a href="#feedbacks">Відгуки</a></li>
+          <li><a href="#support">Контакти</a></li>
+          <li>
+            <a href="./auth.html" class="header-auth-link">Увійти</a>
+          </li>
+          <li>
+            <a href="./cart.html" class="mobile-cart-link">Кошик</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
 
+<script src="/src/menu.js"></script>
+
 
     <main>
-      <!-- Loads the specified .html file -->
-      <section class="vite-promo">
+      <section class="hero">
   <div class="container">
-    <div class="vite-promo-thumb">
-      <a
-        class="vite-promo-link"
-        href="https://vitejs.dev/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Link to Vite official website"
-        title="Vite.js  build tool"
-      >
-        <!-- Path to images as from index.html file -->
-        <img
-          class="pic"
-          src="/diploma-project/assets/vite-logo-9o_aqrTe.png"
-          alt="Vite logo"
-          width="640"
-          height="640"
-        />
-      </a>
+    <div class="hero-main-div">
+      <h1 class="main-title">EcoTote — Стиль, що не шкодить планеті</h1>
+
+      <div class="hero-nested-div">
+        <p class="hero-txt">
+          Екологічні сумки для тих, хто дбає про майбутнє. Обирайте стиль та
+          відповідальність разом з EcoTote.
+        </p>
+
+        <a class="btn-buy-now" href="#assortment-section">Купити зараз</a>
+      </div>
     </div>
-    <h1 class="main-title">
-      <span class="main-title-gradient">Vite</span>
-      Template by
-      <a
-        class="main-title-link"
-        href="https://github.com/goitacademy/vanilla-app-template"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT
-      </a>
-    </h1>
+
+    <picture class="hero-picture">
+      <source
+        media="(min-width: 1440px)"
+        srcset="/diploma-project/assets/hero-banner-desktop-4LD0juvN.jpg 1x, /diploma-project/assets/hero-banner-desktop2x--GyVBHYR.jpg 2x"
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="/diploma-project/assets/hero-banner-tablet-CD6-tOwp.jpg 1x, /diploma-project/assets/hero-banner-tablet2x-CQRG_5aH.jpg 2x"
+      />
+      <img
+        class="hero-img"
+        src="/diploma-project/assets/hero-banner-mobile-DGUfLHHQ.jpg"
+        srcset="/diploma-project/assets/hero-banner-mobile-DGUfLHHQ.jpg 1x, /diploma-project/assets/hero-banner-mobile2x-CUKrX6Pg.jpg 2x"
+        alt="Набір бавовняних екосумок різних кольорів"
+      />
+    </picture>
   </div>
 </section>
 
-      <article class="badges">
+      <section id="feature" class="feature">
+  <div class="feature-container">
+    <p class="tagline">Природність</p>
+    <h2 class="feature-title">Турбота про планету</h2>
+    <p class="feature-p">
+      Ми використовуємо органічну бавовну, перероблений пластик, льон та коноплі
+      для наших сумок.
+    </p>
+  </div>
+</section>
+
+      <section class="layout-section" id="section-layout">
   <div class="container">
-    <ul class="badges-list">
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-html-inject"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          HTML Inject
-        </a>
+    <div class="container-advantages">
+      <p class="benefits-layout">Переваги</p>
+      <h2 class="title-layout">Чому обрати нас?</h2>
+      <p class="benefits-description">
+        Наші сумки виготовлені з екологічно чистих матеріалів, що забезпечують
+        стійкість і довговічність. Обираючи EcoTote, ви підтримуєте екологічну
+        відповідальність.
+      </p>
+    </div>
+
+    <ul class="ul-list-layout">
+      <li class="li-list-layout">
+        <picture>
+          <source
+            media="(min-width: 1440px)"
+            srcset="/diploma-project/assets/organic-dex-Bmzil5tq.jpg 1x, /diploma-project/assets/organic-dex@2x-D3iDkiaR.jpg 2x"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/diploma-project/assets/organic-tablet-B54E9ToL.jpg 1x, /diploma-project/assets/organic-tablet@2x-DsG0uRRa.jpg 2x"
+          />
+          <source
+            media="(max-width: 767px)"
+            srcset="/diploma-project/assets/organic-mobile-CuO74YUQ.jpg 1x, /diploma-project/assets/organic-mobile@2x-CwcB5JXX.jpg 2x"
+          />
+          <img
+            class="list-img-layout"
+            src="/diploma-project/assets/organic-mobile-CuO74YUQ.jpg"
+            alt="Екологічний матеріал для сумки"
+            loading="lazy"
+          />
+        </picture>
+
+        <h3 class="list-title-layout">Стійкість та екологічність</h3>
+        <p class="list-description-layout">
+          Виготовлені з органічної бавовни та переробленого пластику.
+        </p>
       </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-full-reload"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Full Reload
-        </a>
+
+      <li class="li-list-layout">
+        <picture>
+          <source
+            media="(min-width: 1440px)"
+            srcset="/diploma-project/assets/strenght-dex-CosPI5lW.jpg 1x, /diploma-project/assets/strenght-dex@2x-B_t0gaKM.jpg 2x"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/diploma-project/assets/strenght-tablet-C0l3MfPL.jpg 1x, /diploma-project/assets/strenght-tablet@2x-z6jbgjOc.jpg 2x"
+          />
+          <source
+            media="(max-width: 767px)"
+            srcset="/diploma-project/assets/strenght-mobile-BTyaFMP8.jpg 1x, /diploma-project/assets/strenght-mobile@2x-2GrPNM6i.jpg 2x"
+          />
+          <img
+            class="list-img-layout"
+            src="/diploma-project/assets/strenght-mobile-BTyaFMP8.jpg"
+            alt="Міцна екосумка"
+            loading="lazy"
+          />
+        </picture>
+
+        <h3 class="list-title-layout list-title-layout-strenght">
+          Міцність і довговічність
+        </h3>
+        <p class="list-description-layout">
+          Наші сумки мають посилені шви для тривалого використання.
+        </p>
       </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/postcss-sort-media-queries"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Sort Media Queries
-        </a>
+
+      <li class="li-list-layout">
+        <picture>
+          <source
+            media="(min-width: 1440px)"
+            srcset="/diploma-project/assets/style-dex-Br2b_abU.jpg 1x, /diploma-project/assets/style-dex@2x-CZsuABNk.jpg 2x"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/diploma-project/assets/style-tablet-Dwcep_W0.jpg 1x, /diploma-project/assets/style-tablet@2x-Bf9NiZdd.jpg 2x"
+          />
+          <source
+            media="(max-width: 767px)"
+            srcset="/diploma-project/assets/style-mobile-jkIIq1Ix.jpg 1x, /diploma-project/assets/style-mobile@2x-Bs_CAC-6.jpg 2x"
+          />
+          <img
+            class="list-img-layout"
+            src="/diploma-project/assets/style-mobile-jkIIq1Ix.jpg"
+            alt="Стильна екосумка"
+            loading="lazy"
+          />
+        </picture>
+
+        <h3 class="list-title-layout">Стильний та сучасний дизайн</h3>
+        <p class="list-description-layout">
+          Мінімалістичні моделі в обмежених серіях для кожного стилю.
+        </p>
       </li>
     </ul>
   </div>
-</article>
+</section>
+
+      <section class="assortment-section" id="assortment-section">
+  <div class="container">
+    <h2 class="assortment-title">Наші сумки</h2>
+    <p class="assortment-subtitle">
+      Знайдіть ідеальне рішення для вашого комфорту.
+    </p>
+
+    <div class="assortment-filters" aria-label="Фільтри товарів">
+      <button
+        class="assortment-filter-btn is-active"
+        type="button"
+        data-filter="all"
+      >
+        <span class="assortment-filter-icon" aria-hidden="true">👕</span>
+        Всі товари
+      </button>
+
+      <button class="assortment-filter-btn" type="button" data-filter="adults">
+        <span class="assortment-filter-icon" aria-hidden="true">👤</span>
+        Для дорослих
+      </button>
+
+      <button class="assortment-filter-btn" type="button" data-filter="travel">
+        <span class="assortment-filter-icon" aria-hidden="true">🧳</span>
+        Для подорожей
+      </button>
+
+      <button class="assortment-filter-btn" type="button" data-filter="everyday">
+        <span class="assortment-filter-icon" aria-hidden="true">☀️</span>
+        Повсякденні
+      </button>
+
+      <button class="assortment-filter-btn" type="button" data-filter="backpacks">
+        <span class="assortment-filter-icon" aria-hidden="true">🎒</span>
+        Рюкзаки
+      </button>
+
+      <button class="assortment-filter-btn" type="button" data-filter="shoppers">
+        <span class="assortment-filter-icon" aria-hidden="true">🛍️</span>
+        Шопери
+      </button>
+    </div>
+
+    <ul class="assortment-list"></ul>
+
+    <div class="assortment-load-more-wrap">
+      <button class="assortment-load-more-btn" type="button">
+        Показати ще
+      </button>
+    </div>
+  </div>
+</section>
+
+      <section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="container-gallery-text">
+      <h2 class="gallery-title">Галерея зображень</h2>
+      <p class="gallery-second-title">EcoTote у повсякденному житті</p>
+    </div>
+
+    <div class="container-gallery-images">
+      <ul class="gallery-list">
+        <li class="gallery-list-item">
+          <picture>
+            <source
+              media="(min-width: 1440px)"
+              srcset="/diploma-project/assets/eco-tote-pc@1x-B8aRrZP7.jpg 1x, /diploma-project/assets/eco-tote-pc@2x-h8k3URYY.jpg 2x"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="/diploma-project/assets/eco-tote-t@1x-CkGEVmFw.jpg 1x, /diploma-project/assets/eco-tote-t@2x-CcnCoOzu.jpg 2x"
+            />
+            <source
+              media="(max-width: 767px)"
+              srcset="/diploma-project/assets/eco-tote-p@1x-D2_uz8fs.jpg 1x, /diploma-project/assets/eco-tote-p@2x-C40qSUvu.jpg 2x"
+            />
+            <img
+              class="gallery-image"
+              src="/diploma-project/assets/eco-tote-p@1x-D2_uz8fs.jpg"
+              alt="Екосумка на стільці"
+              loading="lazy"
+            />
+          </picture>
+        </li>
+
+        <li class="gallery-list-item">
+          <picture>
+            <source
+              media="(min-width: 1440px)"
+              srcset="/diploma-project/assets/man-with-tote-pc@1x-Dj5xezPG.jpg 1x, /diploma-project/assets/man-with-tote-pc@2x-BsxTEuL4.jpg 2x"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="/diploma-project/assets/man-with-tote-t@1x-CEJRoD5H.jpg 1x, /diploma-project/assets/man-with-tote-t@2x-BqrdPTLB.jpg 2x"
+            />
+            <source
+              media="(max-width: 767px)"
+              srcset="/diploma-project/assets/man-with-tote-p@1x-BEyNXO3N.jpg 1x, /diploma-project/assets/man-with-tote-p@2x-CFZPFEO2.jpg 2x"
+            />
+            <img
+              class="gallery-image"
+              src="/diploma-project/assets/man-with-tote-p@1x-BEyNXO3N.jpg"
+              alt="Чоловік іде вулицею з екосумкою"
+              loading="lazy"
+            />
+          </picture>
+        </li>
+
+        <li class="gallery-list-item">
+          <picture>
+            <source
+              media="(min-width: 1440px)"
+              srcset="/diploma-project/assets/person-with-tote-park-pc@1x-D9NEes79.jpg 1x, /diploma-project/assets/person-with-tote-park-pc@2x-CFwdBpDr.jpg 2x"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="/diploma-project/assets/person-with-tote-park-t@1x-VnWIXB7D.jpg 1x, /diploma-project/assets/person-with-tote-park-t@2x-H7FUeGs9.jpg 2x"
+            />
+            <source
+              media="(max-width: 767px)"
+              srcset="/diploma-project/assets/person-with-tote-park-p@1x-mLxeY9ip.jpg 1x, /diploma-project/assets/person-with-tote-park-p@2x-DVDEiMrC.jpg 2x"
+            />
+            <img
+              class="gallery-image"
+              src="/diploma-project/assets/person-with-tote-park-p@1x-mLxeY9ip.jpg"
+              alt="Людина гуляє парком з екосумкою"
+              loading="lazy"
+            />
+          </picture>
+        </li>
+
+        <li class="gallery-list-item">
+          <picture>
+            <source
+              media="(min-width: 1440px)"
+              srcset="/diploma-project/assets/women-with-tote-pc@1x-DplowdKp.jpg 1x, /diploma-project/assets/women-with-tote-pc@2x-CC7GOvTI.jpg 2x"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="/diploma-project/assets/women-with-tote-t@1x-BabyElHh.jpg 1x, /diploma-project/assets/women-with-tote-t@2x-DGgH7vMr.jpg 2x"
+            />
+            <source
+              media="(max-width: 767px)"
+              srcset="/diploma-project/assets/women-with-tote-p@1x-Do8yx124.jpg 1x, /diploma-project/assets/women-with-tote-p@2x-BXf1smJn.jpg 2x"
+            />
+            <img
+              class="gallery-image"
+              src="/diploma-project/assets/women-with-tote-p@1x-Do8yx124.jpg"
+              alt="Жінка несе овочі в екосумці"
+              loading="lazy"
+            />
+          </picture>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+      <section id="feedbacks" class="section">
+  <div class="container">
+    <h2 class="feedbacks-name-block">Що говорять наші клієнти</h2>
+
+    <ul class="feedbacks-client-list">
+      <li class="feedbacks-item">
+        <div class="feedbacks-card">
+          <ul class="feedbacks-star-list" aria-label="Оцінка 5 із 5">
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+          </ul>
+
+          <p class="feedbacks-text">
+            Сумка дуже зручна та стильна, використовую щодня!
+          </p>
+          <p class="feedbacks-author">Анна</p>
+        </div>
+      </li>
+
+      <li class="feedbacks-item">
+        <div class="feedbacks-card">
+          <ul class="feedbacks-star-list" aria-label="Оцінка 5 із 5">
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+          </ul>
+
+          <p class="feedbacks-text">
+            Відмінна якість матеріалів, приємно здивована.
+          </p>
+          <p class="feedbacks-author">Ігор</p>
+        </div>
+      </li>
+
+      <li class="feedbacks-item">
+        <div class="feedbacks-card">
+          <ul class="feedbacks-star-list" aria-label="Оцінка 5 із 5">
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+          </ul>
+
+          <p class="feedbacks-text">
+            Сумка повністю відповідає опису, рекомендую!
+          </p>
+          <p class="feedbacks-author">Олена</p>
+        </div>
+      </li>
+
+      <li class="feedbacks-item">
+        <div class="feedbacks-card">
+          <ul class="feedbacks-star-list" aria-label="Оцінка 4 із 5">
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg class="star-icon" width="24" height="24" aria-hidden="true">
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+            <li class="feedbacks-star-item">
+              <svg
+                class="star-icon-without-color"
+                width="24"
+                height="24"
+                aria-hidden="true"
+              >
+                <use href="/diploma-project/assets/icons-DWiP1i17.svg#feedback-icon-filles-star"></use>
+              </svg>
+            </li>
+          </ul>
+
+          <p class="feedbacks-text">
+            Швидка доставка та гарне обслуговування.
+          </p>
+          <p class="feedbacks-author">Сергій</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+      <section class="support" id="support">
+  <div class="container support-container">
+    <div class="support-title-wrapper">
+      <h2 class="support-title">Залишились питання? Зв'яжіться з нами!</h2>
+      <p class="support-text">Ми тут, щоб допомогти!</p>
+    </div>
+
+    <form class="support-form" id="supportForm">
+      <div class="support-input-wrapper">
+        <label class="support-input-label" for="supportName">Ім'я</label>
+        <input
+          class="support-input"
+          type="text"
+          name="name"
+          id="supportName"
+          placeholder="Іван"
+          minlength="2"
+          maxlength="60"
+          pattern="[А-Яа-яІіЇїЄєҐґA-Za-z\s'-]{2,60}"
+          title="Ім’я має містити тільки літери, пробіли, апостроф або дефіс."
+          required
+        />
+        <p class="text-invalid">Введіть коректне ім’я.</p>
+      </div>
+
+      <div class="support-input-wrapper">
+        <label class="support-input-label" for="supportEmail">
+          Електронна пошта
+        </label>
+        <input
+          class="support-input"
+          type="email"
+          name="email"
+          id="supportEmail"
+          placeholder="hello@ecotote.com"
+          required
+        />
+        <p class="text-invalid">Введіть коректний email.</p>
+      </div>
+
+      <div class="support-input-wrapper">
+        <label class="support-input-label" for="supportMessage">
+          Повідомлення
+        </label>
+        <textarea
+          class="support-message"
+          name="message"
+          id="supportMessage"
+          placeholder="Введіть своє повідомлення..."
+          minlength="5"
+          maxlength="500"
+          required
+        ></textarea>
+      </div>
+
+      <p class="support-form-message" id="supportFormMessage"></p>
+
+      <button class="support-btn" type="submit">Надіслати</button>
+    </form>
+
+    <div class="support-image" aria-hidden="true"></div>
+  </div>
+</section>
 
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
+  <div class="footer__inner">
+    <div class="footer__content">
+      <a class="footer-logo" href="./index.html" aria-label="EcoTote головна сторінка">
+        <svg class="footer-logo__img" aria-hidden="true">
+          <use href="/diploma-project/assets/logo-icon-BlEpIBSP.svg#logo-icon"></use>
+        </svg>
       </a>
-    </p>
+
+      <nav class="footer-nav" aria-label="Навігація у футері">
+        <ul class="footer-nav__list">
+          <li><a href="#feature" class="footer-nav__link">Про нас</a></li>
+          <li><a href="#section-layout" class="footer-nav__link">Переваги</a></li>
+          <li><a href="#assortment-section" class="footer-nav__link">Асортимент</a></li>
+          <li><a href="#gallery" class="footer-nav__link">Галерея</a></li>
+          <li><a href="#feedbacks" class="footer-nav__link">Відгуки</a></li>
+          <li><a href="#support" class="footer-nav__link">Контакти</a></li>
+        </ul>
+      </nav>
+
+      <ul class="footer-socials">
+        <li>
+          <a
+            href="https://www.instagram.com/"
+            class="footer-socials__link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <svg class="footer-socials__icon" aria-hidden="true">
+              <use href="/diploma-project/assets/icons-DWiP1i17.svg#instagram-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/"
+            class="footer-socials__link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <svg class="footer-socials__icon" aria-hidden="true">
+              <use href="/diploma-project/assets/icons-DWiP1i17.svg#linkedIn-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/"
+            class="footer-socials__link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
+            <svg class="footer-socials__icon" aria-hidden="true">
+              <use href="/diploma-project/assets/icons-DWiP1i17.svg#youtube-icon"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer__credits">
+      <div class="footer__divider"></div>
+
+      <div class="footer-contacts">
+        <a href="tel:+380999091122" class="footer-contacts__link">
+          +38 (099) 909 11 22
+        </a>
+        <a href="mailto:hello@ecotote.com" class="footer-contacts__link">
+          hello@ecotote.com
+        </a>
+      </div>
+
+      <p class="footer-copy">© 2025 EcoTote. Всі права захищені.</p>
+    </div>
   </div>
 </footer>
 
 
+    <script src="./js/validation.js"></script>
+    <script src="./js/auth-link.js"></script>
+    <script src="./js/support.js"></script>
   </body>
 </html>
